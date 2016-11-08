@@ -1,0 +1,39 @@
+{
+  "name": "timesheet-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/timesheet-generator.js",
+  "scripts": {
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "npm run build-es6 && npm run build-min",
+    "build-es6": "babel --presets=babel-preset-es2015 src/timesheet-generator.js -o dist/timesheet-generator.js",
+    "build-min": "uglifyjs dist/timesheet-generator.js -o dist/timesheet-generator.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/rafaelfragosom/timesheet-generator.git"
+  },
+	"keywords": [
+		"timesheets",
+		"enterprise",
+		"routine",
+		"generator"
+  ],
+  "author": "Rafael Fragoso <rafaelfragosom@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rafaelfragosom/timesheet-generator/issues"
+  },
+  "homepage": "https://github.com/rafaelfragosom/timesheet-generator",
+  "dependencies": {
+    "moment": "^2.15.2",
+    "moment-range": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "uglify-js": "^2.7.4"
+  }
+}
